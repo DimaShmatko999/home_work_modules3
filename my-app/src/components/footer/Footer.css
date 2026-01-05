@@ -1,7 +1,7 @@
 .footer {
-  background: #A353A6;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
+    background: #A353A6;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
 }

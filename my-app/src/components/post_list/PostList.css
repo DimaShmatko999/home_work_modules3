@@ -1,5 +1,9 @@
-.post-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.postList {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+.content {
+    padding: 20px;
 }

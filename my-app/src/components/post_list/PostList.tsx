@@ -1,14 +1,54 @@
-import "./PostList.css";
-import PostCard from "./PostCard";
+import { useEffect, useState } from "react"
+import PostCard from "./PostCard"
+import SidebarFilters from "../slide_bar/SidebarFilters"
+import "./PostList.css"
+import { POSTS } from "../../data/posts"
 
-export default function PostList() {
-  const posts = Array.from({ length: 8 }, (_, i) => 'Post ${i + 1}');
+const PostList = () => {
+    const [searchValue, setSearchValue] = useState("")
+    const [selectedTags, setSelectedTags] = useState<number[]>([])
+    const [likesMinimumValue, setLikesMinimumValue] = useState(0)
 
-  return (
-    <div className="post-list">
-      {posts.map((title) => (
-        <PostCard key={title} title={title} />
-      ))}
-    </div>
-  );
+    const [filteredPosts, setFilteredPosts] = useState(POSTS)
+
+    useEffect(() => {
+        let foundPosts = POSTS.filter(post =>
+            post.title.toLowerCase().includes(searchValue.toLowerCase())
+        )
+
+      foundPosts = foundPosts.filter(
+          post => post.likes >= likesMinimumValue
+      )
+
+      if (selectedTags.length > 0) {
+          foundPosts = foundPosts.filter(post =>
+              selectedTags.every(tagId =>
+                  post.tags.some(tag => tag.id === tagId)
+          )
+        )
+      }
+
+      setFilteredPosts(foundPosts)
+    }, [searchValue, selectedTags, likesMinimumValue])
+
+    return (
+        <div className="postList">
+            <SidebarFilters
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+            selectedTags={selectedTags}
+            setSelectedTags={setSelectedTags}
+            likesMinimumValue={likesMinimumValue}
+            setLikesMinimumValue={setLikesMinimumValue}
+        />
+
+        <div className="content">
+            {filteredPosts.map(post => (
+              <PostCard key={post.id} post={post} />
+            ))}
+        </div>
+        </div>
+    )
 }
+
+export default PostList

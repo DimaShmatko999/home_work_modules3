@@ -1,34 +1,38 @@
 .sidebar {
-  width: 300px;
-  background: #B87986;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.sidebar label {
-  font-weight: bold;
-}
-
-.sidebar__row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    background-color: #b57a8a;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .sidebar input {
-  width: 100%;
-  border: 2px solid #888;
-  border-radius: 6px;
-  padding: 6px;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
 }
 
-.sidebar button {
-  width: 100%;
-  padding: 8px;
-  background: white;
-  border: 2px solid #888;
-  border-radius: 6px;
-  cursor: pointer;
+.tags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tag {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.tag.active {
+    background-color: #6a2c70;
+    color: white;
+}
+
+.likesFilter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

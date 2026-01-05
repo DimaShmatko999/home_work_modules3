@@ -1,22 +1,24 @@
-.post-card {
-  background: #FFF957;
-  border-radius: 16px;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  height: 120px;
-  justify-content: center;
+.postCard {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin-bottom: 20px;
 }
 
-.post-card__icon {
-  font-size: 50px;
-  color: #6A1A74;
+.tags {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-.post-card__title {
-  font-size: 16px;
-  font-weight: bold;
-  color: red;
+.tag {
+    background-color: #ddd;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.likes {
+    margin-top: 10px;
 }
