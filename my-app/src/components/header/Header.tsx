@@ -1,12 +1,21 @@
-import "./Header.css";
+import { Link } from "react-router-dom"
+import "./Header.css"
 
 export default function Header() {
     return (
         <header className="header">
             <nav className="header__nav">
-                <a className="header__link active" href="#">all_posts</a>
-                <a className="header__link" href="#">home_page</a>
-                <a className="header__link" href="#">create_post</a>
+                <Link className="header__link" to="/posts">
+                    all_posts
+                </Link>
+
+                <Link className="header__link" to="/">
+                    home_page
+                </Link>
+
+                <Link className="header__link" to="/create_post">
+                    create_post
+                </Link>
             </nav>
 
             <div className="header__right">
@@ -18,5 +27,5 @@ export default function Header() {
                 <span className="header__lang">ENG</span>
             </div>
         </header>
-    );
+    )
 }
