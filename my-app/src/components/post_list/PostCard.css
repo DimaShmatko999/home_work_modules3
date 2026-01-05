@@ -1,0 +1,22 @@
+.post-card {
+  background: #FFF957;
+  border-radius: 16px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 120px;
+  justify-content: center;
+}
+
+.post-card__icon {
+  font-size: 50px;
+  color: #6A1A74;
+}
+
+.post-card__title {
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
+}
